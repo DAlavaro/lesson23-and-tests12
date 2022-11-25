@@ -20,8 +20,8 @@ towns = [Town('Балашиха', 'МО'), Town('Химки', 'МО'), Town('Т�
 
 
 def get_names(towns):
-    # TODO опишите логику функции здесь
-    pass
+    return list(map(lambda x: x.name, towns))
+
 
 
 if __name__ == "__main__":

@@ -9,9 +9,15 @@
 streets = ['ленина', 'советская', 'краснооктябрьская', 'первомайская']
 
 
+def enumirate(input_arr):
+    n = 1
+    for elem in input_arr:
+        yield elem, n
+        n += 1
+
+
 def get_tuples(input_arr):
-    # TODO напишите Ваш код здесь
-    pass
+    return list(enumirate(input_arr))
 
 
 if __name__ == "__main__":

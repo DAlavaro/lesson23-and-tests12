@@ -17,10 +17,12 @@ class Town:
 
 towns = [Town(1, 'Балашиха', 'МО'), Town(2, 'Химки', 'МО'), Town(3, 'Тула', 'Тульская область')]
 
- 
+
 def get_ids(towns):
-    # TODO напишите Ваш код здесь
-    pass
+    filter_mo = filter(lambda x: x.region == 'МО', towns)
+    sorted_name = sorted(filter_mo, key=lambda x: x.name)
+    map_id = map(lambda x: x.id, sorted_name)
+    return list(map_id)
 
 if __name__ == "__main__":
     print(get_ids(towns))

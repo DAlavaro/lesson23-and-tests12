@@ -3,9 +3,28 @@
 # возвращает 3 наиболее повторяющихся элемента из входной строки. 
 
 
+def generator(input_str):
+    dict_s = {}
+    for i in input_str:
+        if i in dict_s:
+            dict_s[i] += 1
+        else:
+            dict_s[i] = 1
+    yield dict_s
+
+
+
 def top3(input_str):
-    pass
-    #TODO напишите Ваш код здесь
+    dict_1 = list(generator(input_str))[0]
+    sorted_d = sorted(dict_1.items(), key=lambda x: x[1],reverse=True)[0:3]
+    return [i[0] for i in sorted_d]
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
